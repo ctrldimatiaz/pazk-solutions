@@ -9,7 +9,7 @@ Worked solutions, written in LaTeX, to the exercises in Justin Thaler's book
 > **Taking a course that uses this book?** Please try the exercises yourself first. Use this repo to check your
 > work afterwards, not instead of doing it.
 
-## 📚 Book version
+## Book version
 
 Exercise and chapter numbers follow the **manuscript dated July 18, 2023** on the
 [author's website](https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.html).
@@ -17,12 +17,12 @@ Other versions may number things differently.
 
 Exercise statements are cited from the book and for the references in each exercise you should check against the book in the above link.
 
-## 🔗 Related
+## Related
 
 - [Sum-Check protocol in Rust](https://github.com/ctrldimatiaz/sumcheck): my implementation of the protocol from Chapter 4. In the current state it contains solution to the exercise 3.4
 - *(Planned)* Lean 4 + Mathlib formalizations of selected results, in `lean/`.
 
-## 🛠️ Building locally
+## Building locally
 
 Requirements: a TeX Live installation with `latexmk` and `biber`, plus the packages
 `amsmath`, `amsthm`, `thmtools`, `xcolor`, `hyperref`, `cleveref` and `biblatex`.
@@ -42,7 +42,7 @@ latexmk        # outputs build/main.pdf
 latexmk -pvc   # rebuild on every save
 ```
 
-## 📁 Structure
+## Structure
 
 ```
 .
@@ -53,12 +53,12 @@ latexmk -pvc   # rebuild on every save
 └── .latexmkrc        # build configuration
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Found an error or a cleaner proof? Please open an
 [issue](../../issues) or a pull request. Say which exercise it is about, and quote the step in question.
 
-## 📜 License
+## License
 
 The solutions and LaTeX sources in this repository are © Diogo Matias. The book, its exercises
 and its content remain © Justin Thaler.
