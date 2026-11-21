@@ -1,0 +1,26 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preamble}
+
+% --- Maths ---
+\RequirePackage{amsmath, amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{thmtools}
+
+% --- Links and references (hyperref must come before cleveref) ---
+\RequirePackage{xcolor}
+\RequirePackage[colorlinks=true, urlcolor= blue, linkcolor=black, citecolor=teal]{hyperref}
+\RequirePackage[capitalise, nameinlink]{cleveref}
+
+% --- Bibliography ---
+\RequirePackage[backend=biber, style=alphabetic]{biblatex}
+\addbibresource{refs.bib}
+
+% --- Environments ---
+\declaretheorem[style=definition, numberwithin=chapter]{exercise}
+\declaretheorem[style=plain, sibling=exercise]{theorem}
+\declaretheorem[style=plain, sibling=exercise]{lemma}
+\declaretheorem[style=definition, sibling=exercise]{definition}
+\declaretheorem[style=remark, numbered=no]{remark}
+
+% --- Macros ---
+%\newcommand{\F}{\mathbb{F}}
