@@ -3,12 +3,22 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: registry.fedoraproject.org/fedora:latest # same system as your distrobox
     steps:
+      - name: Install TeX Live (same packages as locally)
+        run: |
+          dnf install -y git texlive-scheme-basic latexmk biber \
+            'tex(amsmath.sty)' 'tex(amssymb.sty)' 'tex(amsthm.sty)' \
+            'tex(thmtools.sty)' 'tex(xcolor.sty)' 'tex(hyperref.sty)' \
+            'tex(cleveref.sty)' 'tex(biblatex.sty)' 'tex(enumitem.sty)'
+
       - uses: actions/checkout@v4
-      - uses: xu-cheng/latex-action@v3
-        with:
-          root_file: main.tex
+
+      - name: Build
+        run: latexmk
+
       - uses: actions/upload-artifact@v4
         with:
           name: pazk-solutions
           path: build/main.pdf
+          if-no-files-found: error
