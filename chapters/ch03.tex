@@ -1,0 +1,22 @@
+\bookchapter{3}{Definitions and Technical Preliminares}
+
+Exercise numbers refer to \cite{thaler2022pazk}.
+
+\begin{exercise}{3.1}\label{ex:3.1}
+    Let $A,B,C$ be $n \times n$ matrices over a field $\F$. In Section 2.2, we presented a randomized algorithm for checking that $C = AB$. The algorithm picked a random field element r, let $x = (r,\; r^2,\; \ldots,\; r^n)$, and output EQUAL if $Cx = A(Bx)$, and output NOT-EQUAL otherwise.
+    Suppose instead that each entry of the vector $x$ is chosen independently and uniformly at random from $\F$. 
+    Show that:
+    \begin{enumerate}[label=(\alph*)]
+
+        \item\label{ex3.1a} If $C_{ij} = (AB)_{ij}$ for all $i = 1, \ldots, n$, $j = 1, \ldots, n$,
+            then the algorithm outputs EQUAL for every possible choice of $x$.
+        \item\label{ex3.1b} If there is even one $(i,j) \in [n] \times [n]$ such that
+            $C_{ij} \neq (AB)_{ij}$, then the algorithm outputs NOT-EQUAL with
+            probability at least $1 - \frac{1}{|F|}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{proof}[Solution]
+    \textbf{Part \ref{ex:3.1a}.} ...
+    \textbf{Part \ref{ex:3.1b}.} ...
+\end{proof}

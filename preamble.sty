@@ -15,12 +15,24 @@
 \RequirePackage[backend=biber, style=alphabetic]{biblatex}
 \addbibresource{refs.bib}
 
+\RequirePackage{enumitem}   % for (a), (b) labels in lists
+
 % --- Environments ---
-\declaretheorem[style=definition, numberwithin=chapter]{exercise}
-\declaretheorem[style=plain, sibling=exercise]{theorem}
-\declaretheorem[style=plain, sibling=exercise]{lemma}
-\declaretheorem[style=definition, sibling=exercise]{definition}
+% Exercises: the number is given by hand, so it always matches the book
+\declaretheorem[style=definition, name=Exercise]{bookexercise}
+\crefname{bookexercise}{Exercise}{Exercises}
+\newenvironment{exercise}[1]
+  {\renewcommand{\thebookexercise}{#1}\bookexercise}
+  {\endbookexercise}
+
+\declaretheorem[style=plain, numberwithin=chapter]{theorem}
+\declaretheorem[style=plain, sibling=theorem]{lemma}
+\declaretheorem[style=definition, sibling=theorem]{definition}
 \declaretheorem[style=remark, numbered=no]{remark}
 
+% Chapters with the book's numbering: \bookchapter{3}{Title}
+\newcommand{\bookchapter}[2]{%
+  \setcounter{chapter}{\numexpr#1-1\relax}\chapter{#2}}
+
 % --- Macros ---
-%\newcommand{\F}{\mathbb{F}}
+\newcommand{\F}{\mathbb{F}}
