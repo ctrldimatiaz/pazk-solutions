@@ -22,6 +22,11 @@ Exercise statements are cited from the book and for the references in each exerc
 - [Sum-Check protocol in Rust](https://github.com/ctrldimatiaz/sumcheck): my implementation of the protocol from Chapter 4. In the current state it contains solution to the exercise 3.4
 - *(Planned)* Lean 4 + Mathlib formalizations of selected results, in `lean/`.
 
+
+## Read the PDF
+
+The latest compiled PDF is built automatically on every push and may be downloaded under releases or directly from [here](https://github.com/ctrldimatiaz/pazk-solutions/releases/latest/download/main.pdf)
+
 ## Building locally
 
 Requirements: a TeX Live installation with `latexmk` and `biber`, plus the packages
