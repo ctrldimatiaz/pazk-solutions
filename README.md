@@ -49,6 +49,7 @@ latexmk -pvc   # rebuild on every save
 ├── main.tex          # root document
 ├── preamble.sty      # packages, theorem environments, macros
 ├── chapters/         # one file per book chapter
+├── drafts/           # drafts of demonstrations
 ├── refs.bib          # bibliography
 └── .latexmkrc        # build configuration
 ```

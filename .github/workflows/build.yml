@@ -1,7 +1,13 @@
 name: Build PDF
-on: [push, pull_request]
+on:
+  push:
+    branches: ["**"]
+    tags: ["v*"]
+  pull_request:
+
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
