@@ -24,21 +24,25 @@ Exercise numbers refer to \cite{thaler2022pazk}.
 \begin{exercise}{3.2}\label{ex:3.2}
     In Section 2.1, we described a communication protocol of logarithmic cost for determining
     whether Alice’s and Bob’s input vectors are equal. Specifically, Alice and Bob interpreted their inputs as
-    degree-n univariate polynomials $p_a and p_b$, chose a random $r \in \F$ with $|\F| \gg n$, and compared $p_a(r) to
-    p_b(r)$. Give a different communication protocol in which Alice and Bob interpret their inputs as multilinear
+    degree-n univariate polynomials $p_a$ and $p_b$, chose a random $r \in \F$ with $|\F| \gg n$, and compared $p_a(r)$ to
+    $p_b(r)$. Give a different communication protocol in which Alice and Bob interpret their inputs as multilinear
     rather than univariate polynomials over $\F$. How large should $\F$ be to ensure that the probability Bob outputs
-    the wrong answer is at most $1 \frac{1}{n}$? What is the communication cost in bits of this protocol?
+    the wrong answer is at most $\frac{1}{n}$? What is the communication cost in bits of this protocol?
 \end{exercise}
 
 \begin{exercise}{3.3}\label{ex:3.3}
-    Let p = 11. Consider the function $f: {0,1}^2 \to Fp$ given by $f(0,0) = 3, f(0,1) = 4, f(1,0) =
-    1 and f(1,1) = 2$. Write out an explicit expression for the multilinear extension $\tilde(f) of f$. What is $\tilde(f)(2,4)$?
-    Now consider the function $f: {0,1}^3 \to F_p$ given by $f(0,0,0) = 1, f(0,1,0) = 2, f(1,0,0) = 3, f(1,1,0) = 4, f(0,0,1) = 5, f(0,1,1) = 6, f(1,0,1) = 7, f(1,1,1) = 8$. What is $\tilde(f)(2,4,6)$? How many field
-    multiplications did you perform during the calculation? Can you work through a calculation of $\tilde(f)(2,4,6)$ that uses “just” 20 multiplication operations? Hint: see Lemma 3.8.
+    Let $p = 11$. Consider the function $f: \{0,1\}^2 \to F_p$ given by $f(0,0) = 3, f(0,1) = 4, f(1,0) = 1$ and $f(1,1) = 2$. 
+    Write out an explicit expression for the multilinear extension $\tilde{f}$ of $f$. What is $\tilde{f}(2,4)$?
+    Now consider the function $f: \{0,1\}^3 \to F_p$ given by $f(0,0,0) = 1, f(0,1,0) = 2, f(1,0,0) = 3, f(1,1,0) = 4, f(0,0,1) = 5, f(0,1,1) = 6, f(1,0,1) = 7, f(1,1,1) = 8$. What is $\tilde{f}(2,4,6)$? How many field
+    multiplications did you perform during the calculation? Can you work through a calculation of $\tilde{f}(2,4,6)$ that uses “just” 20 multiplication operations? Hint: see Lemma 3.8.
 \end{exercise}
 
 
 \begin{exercise}{3.4}\label{ex:3.4}
-    Exercise 3.4. Fix some prime $p$ of your choosing. Write a Python program that takes as input an array of 
-    length $2\ell$ specifying all evaluations of a function $f : {0,1}^\ell \to \F_p$ and a vector $r \in \F_p^\ell$, and outputs $\tilde{f}$(r).
+    Exercise 3.4. Fix some prime $p$ of your choosing. Write a Python program that takes as input an array of length $2\ell$ specifying all evaluations of a function $f : \{0,1\}^\ell \to \F_p$ and a vector $r \in \F_p^\ell$, and outputs $\tilde{f}$(r).
 \end{exercise}
+
+\begin{proof}[Solution]
+    This solution was implemented in Rust and may be found at my implemention of the \href{https://github.com/ctrldimatiaz/sumcheck}{Sum-Check protocol in Rust} selecting the option "2 - Multilinear extension through evaluations and vector r (Exercise 3.4)" and providing the inputs accordingly.
+\end{proof}
+
